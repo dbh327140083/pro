@@ -38,11 +38,11 @@ public class CourseUserServiceImp implements CourseUserService {
     }
 
     @Override
-    public int delAll(String uids) {
-        String[] ids = uids.split(",");
+    public int delAll(String ids) {
+        String[] arr = ids.split(",");
         int index =0;
-        for (String cid : ids) {
-            int row = dao.deleteByUid(cid);
+        for (String id : arr) {
+            int row = dao.deleteById(id);
             if(row>0){
                 index++;
             }
@@ -51,8 +51,8 @@ public class CourseUserServiceImp implements CourseUserService {
     }
 
     @Override
-    public int updateCourseByUid(String cid, String uid) {
+    public int updateCourseById(String cid, String id) {
 
-        return dao.updateCourseByUid(cid,uid);
+        return dao.updateCourseById(cid,id);
     }
 }

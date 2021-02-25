@@ -11,7 +11,7 @@ public interface CourseUserDao {
     /*查询选课信息*/
     List<CourseUser> findCourseUserByLimit(int cpage, int size);
     /*根据uid删除课程信息*/
-    int deleteByUid(String uid);
+    int deleteById(String id);
     /*根据uid和课程cid根据用户选课信息*/
-    int updateCourseByUid(String cid, String uid);
+    int updateCourseById(String cid, String id);
 }

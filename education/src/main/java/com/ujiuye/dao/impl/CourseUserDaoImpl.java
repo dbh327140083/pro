@@ -57,10 +57,10 @@ public class CourseUserDaoImpl implements CourseUserDao {
     }
 
     @Override
-    public int deleteByUid(String uid) {
-        String sql = "delete from course_user where uid =?";
+    public int deleteById(String id) {
+        String sql = "delete from course_user where id =?";
         try {
-            return qr.update(sql, uid);
+            return qr.update(sql, id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -68,10 +68,10 @@ public class CourseUserDaoImpl implements CourseUserDao {
     }
 
     @Override
-    public int updateCourseByUid(String cid, String uid) {
-        String sql ="update course_user set cid =? where uid =?";
+    public int updateCourseById(String cid, String id) {
+        String sql ="update course_user set cid =? where id =?";
         try {
-            return qr.update(sql,cid,uid);
+            return qr.update(sql,cid,id);
         } catch (SQLException e) {
             e.printStackTrace();
         }

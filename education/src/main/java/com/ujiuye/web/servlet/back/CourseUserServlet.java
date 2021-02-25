@@ -35,8 +35,8 @@ public class CourseUserServlet extends BaseServlet {
     }
 
     public void delAll(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String uids = request.getParameter("uids");
-        int row = service.delAll(uids);
+        String ids = request.getParameter("ids");
+        int row = service.delAll(ids);
         if (row > 0) {
             vo = new ResultVO(200, "批量删除成功", null);
         } else {
@@ -45,10 +45,10 @@ public class CourseUserServlet extends BaseServlet {
         String asString =JsonUtils.toJson(vo,response);
         response.getWriter().print(asString);
     }
-    public void updateCourseByUid(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void updateCourseById(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String cid = request.getParameter("cid");
-        String uid = request.getParameter("uid");
-        int row = service.updateCourseByUid(cid,uid);
+        String id = request.getParameter("id");
+        int row = service.updateCourseById(cid,id);
         if (row > 0) {
             vo = new ResultVO(200, "修改选课成功", null);
         } else {

@@ -11,9 +11,9 @@ public interface CourseUserService {
     /*
      批量删除业务
      */
-    int delAll(String uids);
+    int delAll(String ids);
     /*
         修改用户选课业务
      */
-    int updateCourseByUid(String cid, String uid);
+    int updateCourseById(String cid, String id);
 }
